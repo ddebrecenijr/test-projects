@@ -1,0 +1,12 @@
+.vscode
+
+# Build
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Nuget
+*.nupkg
+**/packages/*
+!**/packages/build/
