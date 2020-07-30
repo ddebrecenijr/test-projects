@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using zipkin.Models;
 
 namespace zipkin.Controllers
 {
@@ -24,8 +25,11 @@ namespace zipkin.Controllers
         }
 
         [HttpGet("{days:int}")]
-        public IEnumerable<WeatherForecast> Get(int days)
+        public IEnumerable<WeatherForecast> GenerateWeatherData(int days)
         {
+            // logger.Info($"Generating data for {days} days");
+            _logger.LogInformation($"Generating data for {days} days");
+
             var rng = new Random();
             return Enumerable
                 .Range(1, days)
@@ -39,8 +43,8 @@ namespace zipkin.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get() {
-            return Get(5);
+        public IEnumerable<WeatherForecast> GenerateWeatherData() {
+            return GenerateWeatherData(5);
         }
     }
 }

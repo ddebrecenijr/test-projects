@@ -1,6 +1,6 @@
 using System;
 
-namespace zipkin
+namespace zipkin.Models
 {
     public class WeatherForecast
     {
