@@ -9,7 +9,15 @@ Run Web API
 
 Make request
 
-`GET https://localhost:5001/weatherforecast`
+`GET http://localhost:5001/weatherforecast`
+
+`POST http://localhost:5001/todo`
+>application/json
+{
+  "name": "Walk the dog",
+  "isComplete": true
+}
+
 
 Should see something like:
 
