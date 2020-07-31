@@ -9,4 +9,8 @@ Run Web API
 
 Make request
 
-`https://localhost:5001/weatherforecast`
+`GET https://localhost:5001/weatherforecast`
+
+Should see something like:
+
+![Zipkin Server](zipkin.png)
