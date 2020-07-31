@@ -11,6 +11,8 @@ Make request
 
 `GET http://localhost:5001/weatherforecast`
 
+or
+
 `POST http://localhost:5001/todo`
 >application/json
 {
