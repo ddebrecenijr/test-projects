@@ -51,17 +51,22 @@ namespace zipkin
 
             appLifetime.ApplicationStopped.Register(() => TraceManager.Stop());
 
-            app.UseTracing("test-web-app");
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            // Does not break here
+            app.UseTracing("test-web-app");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            // Breaks if here
+            // app.UseTracing("test-web-app");
         }
     }
 }
